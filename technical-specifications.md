@@ -26,7 +26,7 @@ A descriptive play-list is a json file describing a root object with the followi
 | ----------- | ------ | ------------------------------------------------------------ |
 | title       | string | The play-list title                                          |
 | description | string | An observation about the play-list contents                  |
-| parent      | string | Another descriptive play-list that contains the definition for the musics in this play-list. |
+| parent      | string | Another descriptive play-list file that contains the definition for the musics in this play-list. |
 | list        | array  | A list containing two types of data: <ul><li>[Music objects](#the-music-object) describing a music.</li><li>A id for a Music object, this music may be defined in the same play-list or in the one specified in the **parent** property.</li></ul> |
 
 Example:
