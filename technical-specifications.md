@@ -1,10 +1,10 @@
 # Descriptive Playlist
 
 Technical Specifications
-Version 3.0.0
+Version: 4.0.0
 
 Adinan Cenci
-Last Updated: June 11, 2022
+Last Updated: August 13, 2022
 
 2019 Adinan Cenci. All Rights Reserved. 
 
@@ -20,7 +20,7 @@ This is the official implementation to the functional specs v1.0.X .
 
 ## The file
 
-A descriptive playlist is a [JSON Lines](https://jsonlines.org/) file. The first line contains a header object describing the playlist followed by the musics objects. These objects either describe a music or make reference to another object as to avoid describing the same music twice.
+A descriptive playlist is a [JSON Lines](https://jsonlines.org/) file. The first line contains a header object describing the playlist followed by the playlist item objects. 
 
 ### The header object
 
@@ -39,21 +39,21 @@ Example:
 }
 ```
 
-## The music object
+## The playlist item object
 
-An object that describes a specific music may contain the following properties:
+An object that describes a specific music or album may contain the following properties:
 
-| Property   | Type          | description                                                          |
-| ----------:|:-------------:| -------------------------------------------------------------------- |
-| uuid       | string        | **Obligatory**. An unique identifier.                                |
-| title      | string        | The music's title.                                                   |
-| artist     | string\|array | The performing artist.                                               |
-| feat       | string\|array | A featured artist.                                                   |
-| cover      | string        | The original artist if the music is being performed by someone else. |
-| album      | string        |                                                                      |
-| soundtrack | string\|array | An intellectual property featuring the music.                        |
-| genres     | string\|array | Musical genre(s).                                                    |
-| reference  | string        | The uuid of another object.                                          |
+| Property          | Type            | description                                                                                                                                                                                                                                    |
+| -----------------:|:---------------:| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| uuid              | string          | **Obligatory**. An unique identifier.                                                                                                                                                                                                          |
+| title             | string          | The music's title.                                                                                                                                                                                                                             |
+| artist            | string\|array   | The performing artist.                                                                                                                                                                                                                         |
+| featuring         | string\|array   | A featured artist.                                                                                                                                                                                                                             |
+| cover             | string          | The original artist if the music is being performed by someone else.                                                                                                                                                                           |
+| album             | string          | The album's title.                                                                                                                                                                                                                             |
+| soundtrack        | string\|array   | An intellectual property featuring the music.                                                                                                                                                                                                  |
+| genres            | string\|array   | Musical genre(s).                                                                                                                                                                                                                              |
+| xxx-[\w-]{1,100}$ | string \| array | Custom proprities, defined by the user or by the software that generated the playlist.<br/>It must be prefixed by `xxx-`, contain only letters, numbers and dashes and be no more than 100 characters long ( not counting the `xxx-` prefix ). |
 
 See the examples below, all are valid DPLS music objects:
 
@@ -61,6 +61,25 @@ See the examples below, all are valid DPLS music objects:
 {
     "uuid": "b040ee44-bd7f-4f93-a53c-3944df6f0cc5", 
     "title": "We Are The Champions"
+}
+```
+
+```json
+{
+    "uuid": "fb3bdfde-4914-450e-ba04-b3f4fbef6dec",
+    "artist":"Freedom Call",
+    "album": "Eternity"
+}
+```
+
+```json
+{
+    "uuid": "3f702cd2-d36f-45ac-8ada-e67bd6468776", 
+    "title": "Twilight Of The Thunder God", 
+    "artist": "Sabaton", 
+    "album": "Carolus Rex", 
+    "cover": "Amon Amarth",
+    "genres": "Metal"
 }
 ```
 
@@ -83,14 +102,5 @@ See the examples below, all are valid DPLS music objects:
     "feat": "Billie Holiday", 
     "soundtrack": "Fallout 3", 
     "genres": ["Jazz", "Blues"]
-}
-```
-
-In order to avoid repetition, it is possible to point to an existing object by simple providing the original's uuid. 
-
-```json
-{
-    "uuid": "55b27284-8c5e-416d-87a6-8a51d25dcf4b",
-    "reference": "4f3a0346-9338-4993-9830-c9620be2d060" // Easy Living
 }
 ```
