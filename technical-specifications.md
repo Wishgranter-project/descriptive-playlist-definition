@@ -32,7 +32,6 @@ A descriptive playlist is a [JSON Lines](https://jsonlines.org/) file. The first
 Example:
 
 ```javascript
-// favorites.dpls
 {
     "title": "Favorites", 
     "description": "My favorite musics of all time"
@@ -55,7 +54,7 @@ An object that describes a specific music or album may contain the following pro
 | genres            | string\|array   | Musical genre(s).                                                                                                                                                                                                                              |
 | xxx-[\w-]{1,100}$ | string \| array | Custom proprities, defined by the user or by the software that generated the playlist.<br/>It must be prefixed by `xxx-`, contain only letters, numbers and dashes and be no more than 100 characters long ( not counting the `xxx-` prefix ). |
 
-See the examples below, all are valid DPLS music objects:
+See the examples below, all are valid DPLS playlist item objects:
 
 ```json
 {
