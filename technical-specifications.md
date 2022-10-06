@@ -1,18 +1,16 @@
 # Descriptive Playlist
 
 Technical Specifications
-Version: 4.0.0
+Version: 5.0.0
 
 Adinan Cenci
-Last Updated: August 13, 2022
+Last Updated: October 06, 2022
 
 2019 Adinan Cenci. All Rights Reserved. 
 
 ## Overview
 
 Descriptive playlist is a file format to define a music playlist.
-
-This spec is still not complete.
 
 This document specifies the file's structure. 
 
@@ -24,10 +22,11 @@ A descriptive playlist is a [JSON Lines](https://jsonlines.org/) file. The first
 
 ### The header object
 
-| Property    | Type   | Description                                |
-| ----------- | ------ | ------------------------------------------ |
-| title       | string | The playlist title                         |
-| description | string | An observation about the playlist contents |
+| Property        | Type                           | Description                                                                                                                                                                                                                    |
+| --------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| title           | string                         | The playlist title                                                                                                                                                                                                             |
+| description     | string                         | An observation about the playlist contents                                                                                                                                                                                     |
+| xxx[\w]{1,100}$ | string \| num \| null \| array | Custom properties, defined by the user or by the software managing the playlist.<br/>It must be prefixed by `xxx`, contain only letters and numbers and be no more than 100 characters long ( not counting the `xxx` prefix ). |
 
 Example:
 
@@ -38,28 +37,47 @@ Example:
 }
 ```
 
+```javascript
+{
+    "title": "Favorites", 
+    "description": "My favorite musics of all time"
+    "xxxAuthor": "Adinan"
+}
+```
+
 ## The playlist item object
 
 An object that describes a specific music or album may contain the following properties:
 
-| Property          | Type            | description                                                                                                                                                                                                                                    |
-| -----------------:|:---------------:| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| uuid              | string          | **Obligatory**. An unique identifier.                                                                                                                                                                                                          |
-| title             | string          | The music's title.                                                                                                                                                                                                                             |
-| artist            | string\|array   | The performing artist.                                                                                                                                                                                                                         |
-| featuring         | string\|array   | A featured artist.                                                                                                                                                                                                                             |
-| cover             | string          | The original artist if the music is being performed by someone else.                                                                                                                                                                           |
-| album             | string          | The album's title.                                                                                                                                                                                                                             |
-| soundtrack        | string\|array   | An intellectual property featuring the music.                                                                                                                                                                                                  |
-| genres            | string\|array   | Musical genre(s).                                                                                                                                                                                                                              |
-| xxx-[\w-]{1,100}$ | string \| array | Custom proprities, defined by the user or by the software that generated the playlist.<br/>It must be prefixed by `xxx-`, contain only letters, numbers and dashes and be no more than 100 characters long ( not counting the `xxx-` prefix ). |
+| Property        | Type                           | description                                                                                                                                                                                                                    |
+| ---------------:|:------------------------------:| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| uuid            | string                         | **Obligatory**. An unique identifier.                                                                                                                                                                                          |
+| title           | string                         | The music's title.                                                                                                                                                                                                             |
+| artist          | string\|array                  | The performing artist.                                                                                                                                                                                                         |
+| featuring       | string\|array                  | A featured artist.                                                                                                                                                                                                             |
+| cover           | string                         | The original artist if the music is being performed by someone else.                                                                                                                                                           |
+| album           | string                         | The album's title.                                                                                                                                                                                                             |
+| soundtrack      | string\|array                  | An intellectual property featuring the music.                                                                                                                                                                                  |
+| genres          | string\|array                  | Musical genre(s).                                                                                                                                                                                                              |
+| xxx[\w]{1,100}$ | string \| num \| null \| array | Custom properties, defined by the user or by the software managing the playlist.<br/>It must be prefixed by `xxx`, contain only letters and numbers and be no more than 100 characters long ( not counting the `xxx` prefix ). |
 
-See the examples below, all are valid DPLS playlist item objects:
+**Note**: Title or album ( or both ) must be informed for the item to be considered valid.
+
+
+
+See the examples below, all are valid playlist items:
 
 ```json
 {
     "uuid": "b040ee44-bd7f-4f93-a53c-3944df6f0cc5", 
     "title": "We Are The Champions"
+}
+```
+
+```json
+{
+    "uuid": "ea38305c-a8d6-4272-98ee-0c5e2a8aa495",
+    "album":"Sonic Firestorm"
 }
 ```
 
@@ -84,22 +102,22 @@ See the examples below, all are valid DPLS playlist item objects:
 
 ```json
 {
-    "uuid": "3f702cd2-d36f-45ac-8ada-e67bd6468776", 
-    "title": "Twilight Of The Thunder God", 
-    "artist": "Sabaton", 
-    "album": "Carolus Rex", 
-    "cover": "Amon Amarth",
-    "genres": "Metal"
-}
-```
-
-```json
-{
     "uuid": "4f3a0346-9338-4993-9830-c9620be2d060", 
     "title": "Easy Living", 
     "artist": "Teddy Wilson And His Orchestra", 
     "feat": "Billie Holiday", 
     "soundtrack": "Fallout 3", 
     "genres": ["Jazz", "Blues"]
+}
+```
+
+An example with custom properties:
+
+```json
+{
+    "uuid": "18c79907-6fff-4ebf-b451-6882065fbcb4", 
+    "title": "Wind Like Stroke", 
+    "xxxRating": 10,
+    "xxxCanFindAt": "hppts://spoti......"
 }
 ```
