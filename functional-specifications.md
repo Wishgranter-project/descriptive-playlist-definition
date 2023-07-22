@@ -1,32 +1,33 @@
 # Descriptive Play-List
 
 Functional Specifications
-Version 1.0.1
+Version 1.0.2
 
 Adinan Cenci
-Last Updated: November 28, 2020
+Last Updated: July 22, 2023
 
 2019 Adinan Cenci. All Rights Reserved. 
 
 ## Overview
 
-Descriptive play-list or DPLS, is a file format to define a music play-list.
+**Descriptive Playlist (DPLS)** is a file format designed to define a music playlist in a versatile manner.
 
-This spec is still not complete.
+Please note that this specification is still a work in progress.
 
-This document does not discuss the file structure.
+This document will not delve into the detailed file structure; instead, it will focus on the core concepts and functionality of the Descriptive Playlist format.
 
 ## Concept
 
-Whether it be files in the user's computer or in a on-line streaming service, most play-list formats are dependent on the availability of multimedia to keep a play-list, being a "map" to a series of resources, files or streaming.
+Traditionally, most playlist formats rely on multimedia availability, either as files on a user's computer or accessible through online streaming services. These playlists essentially act as "maps" to a sequence of resources, be files or streams.
 
-This keeps users from having an unified database of their favorite musics, their collection spread across multiple services depending on the availability of each. The descriptive play-list aims to solve this problem by being independent of multimedia, describing the musics instead of mapping files and streams.
+However, this approach results in fragmented music collections, as users are tied to various services depending on the availability of their favorite songs. The Descriptive Playlist aims to address this issue by focusing on the music itself rather than mapping specific resources.
 
-# Scenarios
+## Scenarios
 
-**Scenario 1: Mike**
-Today there are dozens of on-line streaming services to chose like Spotify, Deezer, Youtube Music .etc, the list goes on. Mike loves music and he opts for using Spotify, but it lacks a series of songs from his favorite Jazz singer, songs that are available at Deezer, but Deezer in turn lacks a series of his favorite Metal artists which are available at Spotify.
+**Scenario 1: Mike** Mike is a music enthusiast and to him are available several streaming services like Spotify, Deezer, and Youtube Music. Each platform offers a diverse selection of songs, but there are unique music pieces available on different services.
 
-In order to save all his music, he creates an account in each service. All is fine until one day when Deezer excludes the songs from Mike's favorite Jazz artist because of some copyright dispute Mike has no control over, now he must look for his music elsewhere, if he does remember the titles of the deleted songs.
+For instance, Mike's favorite Jazz singer's songs are only available on Deezer, while his preferred Metal artists' tracks are exclusively on Spotify. To have access to all his favorite music, Mike creates accounts on each platform.
 
-To solve this problem, he install a music-player on his computer that makes use of Descriptive Play-lists, this music-player is capable of figuring out for him, which streaming service offers the music he desires.
+However, one day, Deezer removes some songs from his favorite Jazz artist due to a copyright dispute Mike has no control over. He now faces the challenge of finding these songs elsewhere, provided he remembers their titles.
+
+To tackle this issue, Mike installs a music player on his computer that supports Descriptive Playlists. This advanced music player can intelligently determine which streaming service offers the music he desires, seamlessly providing an unified experience.
