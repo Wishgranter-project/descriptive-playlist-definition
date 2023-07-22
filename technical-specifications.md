@@ -1,10 +1,10 @@
 # Descriptive Playlist
 
 Technical Specifications
-Version: 5.0.0
+Version: 6.0.0
 
 Adinan Cenci
-Last Updated: October 06, 2022
+Last Updated: July 22, 2023
 
 2019 Adinan Cenci. All Rights Reserved. 
 
@@ -14,7 +14,7 @@ Descriptive playlist is a file format to define a music playlist.
 
 This document specifies the file's structure. 
 
-This is the official implementation to the functional specs v1.0.X .
+This is the official implementation to the [functional specs](https://github.com/adinan-cenci/descriptive-playlist-definition/blob/master/functional-specifications.md) v1.0.X .
 
 ## The file
 
@@ -58,12 +58,10 @@ An object that describes a specific music or album may contain the following pro
 | cover           | string                         | The original artist if the music is being performed by someone else.                                                                                                                                                           |
 | album           | string                         | The album's title.                                                                                                                                                                                                             |
 | soundtrack      | string\|array                  | An intellectual property featuring the music.                                                                                                                                                                                  |
-| genres          | string\|array                  | Musical genre(s).                                                                                                                                                                                                              |
+| genre           | string\|array                  | Musical genre(s).                                                                                                                                                                                                              |
 | xxx[\w]{1,100}$ | string \| num \| null \| array | Custom properties, defined by the user or by the software managing the playlist.<br/>It must be prefixed by `xxx`, contain only letters and numbers and be no more than 100 characters long ( not counting the `xxx` prefix ). |
 
 **Note**: Title or album ( or both ) must be informed for the item to be considered valid.
-
-
 
 See the examples below, all are valid playlist items:
 
@@ -96,7 +94,7 @@ See the examples below, all are valid playlist items:
     "artist": "Sabaton", 
     "album": "Carolus Rex", 
     "cover": "Amon Amarth",
-    "genres": "Metal"
+    "genre": "Metal"
 }
 ```
 
@@ -107,7 +105,7 @@ See the examples below, all are valid playlist items:
     "artist": "Teddy Wilson And His Orchestra", 
     "feat": "Billie Holiday", 
     "soundtrack": "Fallout 3", 
-    "genres": ["Jazz", "Blues"]
+    "genre": ["Jazz", "Blues"]
 }
 ```
 
