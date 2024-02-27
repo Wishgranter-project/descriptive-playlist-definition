@@ -14,7 +14,7 @@ Descriptive playlist is a file format to define a music playlist.
 
 This document specifies the file's structure. 
 
-This is the official implementation to the [functional specs](https://github.com/adinan-cenci/descriptive-playlist-definition/blob/master/functional-specifications.md) v1.0.X .
+This is the official implementation to the [functional specs](https://github.com/wishgranter-project/descriptive-playlist-definition) v1.0.X .
 
 ## The file
 
