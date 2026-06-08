@@ -18,12 +18,16 @@ This is the official implementation of the [functional specs](https://github.com
 
 ## The file
 
-A descriptive playlist is a [JSON Lines](https://jsonlines.org/) file. The first line contains a header object describing the playlist followed by the playlist item objects. 
-
-The order the items appear in the file indicates playback order.
+A descriptive playlist is a [JSON Lines](https://jsonlines.org/) file. 
 
 Suggested filename extension: `.dpls`.  
 MIME type: `application/vnd.dpls+jsonl`.
+
+## Schema
+
+The first line contains a header object describing the playlist followed by the playlist item objects.
+
+The order the items appear in the file indicates playback order.
 
 ### The header object
 
@@ -154,3 +158,15 @@ An example with custom properties:
     "xxxCanFindAt": "https://spoti......"
 }
 ```
+
+More examples can be found in the `examples` directory.
+
+## Validating
+
+You can find schema definitions in the `schemas` directory.
+
+### Script
+
+This repository includes a script to help with validating.
+
+Install the dependencies and run `npm run validate your-playlist-goes-here.dpls`
