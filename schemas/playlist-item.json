@@ -5,8 +5,7 @@
   "properties": {
     "uuid": {
       "type": "string",
-      "description": "Uuid v4 string.",
-      "format": "uuid"
+      "description": "Uuid v4 string."
     },
     "title": {
       "type": "string",
