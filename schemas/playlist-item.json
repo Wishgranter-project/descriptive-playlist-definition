@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://wishgranterproject.com/schemas/playlist-item.json",
+  "$id": "https://wishgranterproject.com/descriptive-playlist/schemas/playlist-item.json",
   "type": "object",
   "properties": {
     "uuid": {
