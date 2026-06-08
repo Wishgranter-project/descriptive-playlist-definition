@@ -26,16 +26,16 @@ The order the items appear in the file inform reproduction order.
 
 | Property        | Type                           | Description                                                                                                                                                                                                                    |
 | --------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| title           | string                         | The playlist's. title                                                                                                                                                                                                             |
-| description     | string                         | An observation about the playlist. contents                                                                                                                                                                                     |
-| xxx[A-Za-z0-9]{1,100}$ | string \| num \| null \| array | Custom properties, defined by the user or by the software managing the playlist.<br/>It must be prefixed by `xxx`, contain only letters and numbers and be no more than 100 characters long ( not counting the `xxx` prefix ). |
+| title           | string                         | The playlist's title                                                                                                                                                                                                             |
+| description     | string                         | An observation about the playlist contents                                                                                                                                                                                     |
+| ^xxx[A-Za-z0-9]{1,100}$ | string \| num \| null \| array | Custom properties, defined by the user or by the software managing the playlist.<br/>It must be prefixed by `xxx`, contain only letters and numbers and be no more than 100 characters long ( not counting the `xxx` prefix ). |
 
 Example:
 
 ```javascript
 {
     "title": "Favorites", 
-    "description": "My favorite music of all time",
+    "description": "My favorite music of all time"
 }
 ```
 
@@ -53,7 +53,7 @@ An object that describes a specific music or album may contain the following pro
 
 | Property        | Type                           | description                                                                                                                                                                                                                    |
 | ---------------:|:------------------------------:| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| uuid            | string                         | **Required**. An unique identifier.                                                                                                                                                                                          |
+| uuid            | string                         | **Required**. A unique identifier.                                                                                                                                                                                          |
 | title           | string                         | The music's title.                                                                                                                                                                                                             |
 | artist          | string\|array                  | The performing artist.                                                                                                                                                                                                         |
 | featuring       | string\|array                  | A featured artist, helpful to single out performances.                                                                                                                                                                                                             |
@@ -61,7 +61,7 @@ An object that describes a specific music or album may contain the following pro
 | album           | string                         | The album's title.                                                                                                                                                                                                             |
 | soundtrack      | string\|array                  | Intellectual property(ies) featuring the music.                                                                                                                                                                                  |
 | genre           | string\|array                  | Musical genre(s) that could be used to categorize the music.                                                                                                                                                                                                              |
-| xxx[A-Za-z0-9]{1,100}$ | string \| num \| null \| array | Custom properties, defined by the user or by the software managing the playlist.<br/>It must be prefixed by `xxx`, contain only letters and numbers and be no more than 100 characters long ( not counting the `xxx` prefix ). |
+| ^xxx[A-Za-z0-9]{1,100}$ | string \| num \| null \| array | Custom properties, defined by the user or by the software managing the playlist.<br/>It must be prefixed by `xxx`, contain only letters and numbers and be no more than 100 characters long ( not counting the `xxx` prefix ). |
 
 **Note**: Title or album ( or both ) must be informed for the item to be considered valid.
 
@@ -118,6 +118,6 @@ An example with custom properties:
     "uuid": "18c79907-6fff-4ebf-b451-6882065fbcb4", 
     "title": "Wind Like Stroke", 
     "xxxRating": 10,
-    "xxxCanFindAt": "hptts://spoti......"
+    "xxxCanFindAt": "https://spoti......"
 }
 ```
