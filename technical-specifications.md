@@ -133,6 +133,16 @@ An example with the `featuring` property, here we aim for that time _Gotye_ perf
 }
 ```
 
+Example of how to represent an entire album with a single entry. A proper descriptive player should still be able to play it.
+
+```json
+{
+    "uuid": "cba5ef8b-eec3-4694-8b2d-7907799d6a4a",
+    "album": "Death Magnetic",
+    "artist": "Metallica"
+}
+```
+
 An example with custom properties:
 
 ```json
