@@ -22,6 +22,9 @@ A descriptive playlist is a [JSON Lines](https://jsonlines.org/) file. The first
 
 The order the items appear in the file inform reproduction order.
 
+Suggested filename extension: `.dpls`.  
+MIME type: `application/vnd.dpls+jsonl`.
+
 ### The header object
 
 | Property        | Type                           | Description                                                                                                                                                                                                                    |
