@@ -71,7 +71,9 @@ An object that describes a specific music or album may contain the following pro
 - Use UUID v4.
 - Title or album ( or both ) must be informed for the item to be considered valid.
 
-See the examples below, all are valid playlist items:
+See the examples below, all are valid playlist items.
+
+Minimal definitions:
 
 ```json
 {
@@ -95,25 +97,28 @@ See the examples below, all are valid playlist items:
 }
 ```
 
+Exemple of the `cover` property in use, _Twilight Of The Thunder God_ is an song from _Amon Amarth_, but here we are specifying the cover by _Sabaton_.
+
 ```json
 {
-    "uuid": "3f702cd2-d36f-45ac-8ada-e67bd6468776", 
-    "title": "Twilight Of The Thunder God", 
-    "artist": "Sabaton", 
-    "album": "Carolus Rex", 
+    "uuid": "3f702cd2-d36f-45ac-8ada-e67bd6468776",
+    "title": "Twilight Of The Thunder God",
+    "artist": "Sabaton",
+    "album": "Carolus Rex",
     "cover": "Amon Amarth",
     "genre": "Metal"
 }
 ```
 
+Example of the `soundtrack` property in use, this song has been featured in the soundtrack of _Fallout 3_.
+
 ```json
 {
-    "uuid": "4f3a0346-9338-4993-9830-c9620be2d060", 
-    "title": "Easy Living", 
-    "artist": "Teddy Wilson And His Orchestra", 
-    "featuring": "Billie Holiday",
-    "soundtrack": "Fallout 3", 
-    "genre": ["Jazz", "Blues"]
+    "uuid": "4f3a0346-9338-4993-9830-c9620be2d060",
+    "title": "Easy Living",
+    "artist": "Billie Holiday",
+    "soundtrack": "Fallout 3",
+    "genre": ["Jazz", "Swing"]
 }
 ```
 
