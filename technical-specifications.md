@@ -97,7 +97,7 @@ Minimal definitions:
 }
 ```
 
-Exemple of the `cover` property in use, _Twilight Of The Thunder God_ is an song from _Amon Amarth_, but here we are specifying the cover by _Sabaton_.
+Exemple of the `cover` property in use, _Twilight Of The Thunder God_ is an song by _Amon Amarth_, but here we are specifying the cover by _Sabaton_.
 
 ```json
 {
@@ -122,12 +122,24 @@ Example of the `soundtrack` property in use, this song has been featured in the 
 }
 ```
 
+An example with the `featuring` property, here we aim for that time _Gotye_ performed alongside _The Basics_ and _Monty Cotton_.
+
+```json
+{
+    "uuid": "26170b5c-4786-4fb6-b234-04320597299b", 
+    "title": "Somebody That I Used To Know",
+    "artist": "Gotye",
+    "featuring": ["The Basics", "Monty Cotton"]
+}
+```
+
 An example with custom properties:
 
 ```json
 {
     "uuid": "18c79907-6fff-4ebf-b451-6882065fbcb4", 
-    "title": "Wind Like Stroke", 
+    "title": "Wind Like Stroke",
+    "artist": "Dark Moor",
     "xxxRating": 10,
     "xxxCanFindAt": "https://spoti......"
 }
