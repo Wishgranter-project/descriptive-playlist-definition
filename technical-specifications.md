@@ -35,18 +35,18 @@ MIME type: `application/vnd.dpls+jsonl`.
 
 Example:
 
-```javascript
+```json
 {
-    "title": "Favorites", 
-    "description": "My favorite music of all time"
+    "title": "Heavy metal songs", 
+    "description": "Best songs of the 80's"
 }
 ```
 
-```javascript
+```json
 {
     "title": "Favorites", 
     "description": "My favorite music of all time",
-    "xxxAuthor": "Adinan"
+    "xxxAuthor": "Adinan <adinan@email.com>"
 }
 ```
 
@@ -58,8 +58,8 @@ An object that describes a specific music or album may contain the following pro
 | ---------------:|:------------------------------:| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | uuid            | string                         | **Required**. A unique identifier.                                                                                                                                                                                          |
 | title           | string                         | The music's title.                                                                                                                                                                                                             |
-| artist          | string\|array                  | The performing artist.                                                                                                                                                                                                         |
-| featuring       | string\|array                  | A featured artist, helpful to single out performances.                                                                                                                                                                                                             |
+| artist          | string\|array                  | The performing artist(s).                                                                                                                                                                                                         |
+| featuring       | string\|array                  | Featured artist(s), helpful to single out performances.                                                                                                                                                                                                             |
 | cover           | string                         | The original artist if the music is being performed by someone else.                                                                                                                                                           |
 | album           | string                         | The album's title.                                                                                                                                                                                                             |
 | soundtrack      | string\|array                  | Intellectual property(ies) featuring the music.                                                                                                                                                                                  |

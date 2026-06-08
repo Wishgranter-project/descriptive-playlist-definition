@@ -38,7 +38,7 @@
           }
         }
       ],
-      "description": "A featured artist, helpful to single out performances."
+      "description": "Featured artist(s), helpful to single out performances."
     },
     "cover": {
       "type": "string",
