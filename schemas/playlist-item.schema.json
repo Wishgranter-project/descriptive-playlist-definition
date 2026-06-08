@@ -1,0 +1,109 @@
+{
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "type": "string",
+      "description": "Uuid v4 string."
+    },
+    "title": {
+      "type": "string",
+      "description": "The music's title."
+    },
+    "artist": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ],
+      "description": "The performing artist(s)."
+    },
+    "featuring": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ],
+      "description": "A featured artist, helpful to single out performances"
+    },
+    "cover": {
+      "type": "string",
+      "description": "The original artist if the music is being performed by someone else."
+    },
+    "album": {
+      "type": "string",
+      "description": "The album's title."
+    },
+    "soundtrack": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ],
+      "description": "Intellectual property(ies) featuring the music."
+    },
+    "genre": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ],
+      "description": "Musical genre(s) that could be used to categorize the music."
+    }
+  },
+  "required": [
+    "uuid"
+  ],
+  "anyOf": [
+    { "required": ["title"] },
+    { "required": ["album"] }
+  ],
+  "patternProperties": {
+    "^xxx[A-Za-z0-9]{1,100}$": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

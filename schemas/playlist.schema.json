@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "The playlist's title."
+    },
+    "description": {
+      "type": "string",
+      "description": "An observation about the playlist contents."
+    }
+  },
+  "patternProperties": {
+    "^xxx[A-Za-z0-9]{1,100}$": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
