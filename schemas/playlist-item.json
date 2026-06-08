@@ -1,9 +1,12 @@
 {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://wishgranterproject.com/schemas/playlist-item.json",
   "type": "object",
   "properties": {
     "uuid": {
       "type": "string",
-      "description": "Uuid v4 string."
+      "description": "Uuid v4 string.",
+      "format": "uuid"
     },
     "title": {
       "type": "string",
@@ -91,6 +94,9 @@
           "type": "number"
         },
         {
+          "type": "null"
+        },
+        {
           "type": "array",
           "items": {
             "oneOf": [
@@ -99,6 +105,9 @@
               },
               {
                 "type": "number"
+              },
+              {
+                "type": "null"
               }
             ]
           }

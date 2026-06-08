@@ -1,4 +1,6 @@
 {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://wishgranterproject.com/schemas/playlist.json",
   "type": "object",
   "properties": {
     "title": {
@@ -20,6 +22,9 @@
           "type": "number"
         },
         {
+          "type": "null"
+        },
+        {
           "type": "array",
           "items": {
             "oneOf": [
@@ -28,6 +33,9 @@
               },
               {
                 "type": "number"
+              },
+              {
+                "type": "null"
               }
             ]
           }
