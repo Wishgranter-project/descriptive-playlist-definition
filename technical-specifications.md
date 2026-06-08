@@ -20,6 +20,8 @@ This is the official implementation to the [functional specs](https://github.com
 
 A descriptive playlist is a [JSON Lines](https://jsonlines.org/) file. The first line contains a header object describing the playlist followed by the playlist item objects. 
 
+The order the items appear in the file inform reproduction order.
+
 ### The header object
 
 | Property        | Type                           | Description                                                                                                                                                                                                                    |
