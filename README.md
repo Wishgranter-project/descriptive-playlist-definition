@@ -1,4 +1,4 @@
-# Descriptive Play-List
+# Descriptive Playlist
 
 Functional Specifications
 Version 1.0.3
@@ -6,7 +6,7 @@ Version 1.0.3
 Adinan Cenci
 Last Updated: May 6, 2026
 
-2019 Adinan Cenci. All Rights Reserved. 
+2019 Adinan Cenci. MIT licensed. 
 
 ## Overview
 
@@ -36,7 +36,7 @@ resources.
 
 ## Scenarios
 
-**Scenario 1: Mike** Mike is a music enthusiast and to him are available 
+**Scenario 1: Mike** Mike is a music enthusiast and has access to 
 several streaming services like Spotify, Deezer, and Youtube Music. Each 
 platform offers a diverse selection of songs, but there are unique music 
 pieces available on different services.
@@ -57,8 +57,8 @@ musical genre etc.
 
 And this advanced music player can intelligently determine where to find the 
 media to play, be in Mike's own computer or online streaming services, 
-seamlessly providing an unified experience.
+seamlessly providing a unified experience.
 
 So even if Mike deletes his .mp3 files from his computer or the streaming 
 service stop providing the music, Mike's music collection will remain intact, 
-so long Mike secures his descriptive playlist files.
+as long Mike as secures his descriptive playlist files.

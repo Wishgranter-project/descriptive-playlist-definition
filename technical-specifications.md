@@ -1,12 +1,12 @@
 # Descriptive Playlist
 
 Technical Specifications
-Version: 6.0.0
+Version: 6.1.0
 
 Adinan Cenci
-Last Updated: July 22, 2023
+Last Updated: June 08, 2026
 
-2019 Adinan Cenci. All Rights Reserved. 
+2019 Adinan Cenci. MIT licensed. 
 
 ## Overview
 
@@ -14,13 +14,13 @@ Descriptive playlist is a file format to define a music playlist.
 
 This document specifies the file's structure. 
 
-This is the official implementation of the [functional specs](https://github.com/wishgranter-project/descriptive-playlist-definition) v1.0.X .
+This is the official implementation of the [functional specs](https://github.com/wishgranter-project/descriptive-playlist-definition) v1.0.x .
 
 ## The file
 
 A descriptive playlist is a [JSON Lines](https://jsonlines.org/) file. The first line contains a header object describing the playlist followed by the playlist item objects. 
 
-The order the items appear in the file inform reproduction order.
+The order the items appear in the file indicates playback order.
 
 Suggested filename extension: `.dpls`.  
 MIME type: `application/vnd.dpls+jsonl`.
@@ -97,7 +97,7 @@ Minimal definitions:
 }
 ```
 
-Exemple of the `cover` property in use, _Twilight Of The Thunder God_ is an song by _Amon Amarth_, but here we are specifying the cover by _Sabaton_.
+Example of the `cover` property in use, _Twilight Of The Thunder God_ is a song by _Amon Amarth_, but here we are specifying the cover by _Sabaton_.
 
 ```json
 {
