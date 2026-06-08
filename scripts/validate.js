@@ -1,9 +1,17 @@
+/**
+ * File to help validate descriptive playlist files.
+ *
+ * Invoke this file through node and pass the file you wish to validate as an 
+ * argument.
+ */
+
 const Ajv = require('ajv');
 const ajv = new Ajv();
 const fs = require('fs');
+const path = require('path');
 
-const headerSchema = JSON.parse(fs.readFileSync('../schemas/playlist-header.json'));
-const itemSchema = JSON.parse(fs.readFileSync('../schemas/playlist-item.json'));
+const headerSchema = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../schemas/playlist-header.json')));
+const itemSchema = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../schemas/playlist-item.json')));
 const validateHeader = ajv.compile(headerSchema);
 const validateItem = ajv.compile(itemSchema);
 
