@@ -1,14 +1,12 @@
 {
   "name": "descriptive-playlist-scripts",
-  "descriptions": "Scripts to help debug and exemplify descriptive playlists",
+  "description": "Scripts to help debug and exemplify descriptive playlists",
   "version": "1.0.0",
-  "main": "validate.js",
   "scripts": {
     "validate": "node ./scripts/validate.js"
   },
   "author": "Adinan Cenci <adinancenci@protonmail.com>",
   "license": "MIT",
-  "description": "",
   "dependencies": {
     "ajv": "^8.20.0"
   }

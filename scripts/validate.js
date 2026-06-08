@@ -1,7 +1,7 @@
 /**
  * File to help validate descriptive playlist files.
  *
- * Invoke this file through node and pass the file you wish to validate as an 
+ * Invoke this script through node and pass the file you wish to validate as an 
  * argument.
  */
 
@@ -14,23 +14,36 @@ const headerSchema = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../sche
 const itemSchema = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../schemas/playlist-item.json')));
 const validateHeader = ajv.compile(headerSchema);
 const validateItem = ajv.compile(itemSchema);
+const file = process.argv[2];
 
-console.log(`Validating file ${process.argv[2]}`);
-
-const lines = fs.readFileSync(process.argv[2], 'utf8').trim().split("\n");
-
-if (validateHeader(JSON.parse(lines[0]))) {
-    console.log('Header is valid.');
-} else {
-    console.log('Header is invalid.');
-    console.log(validateHeader.errors);
-}
-
-lines.slice(1).forEach((line, i) => {
-    if (validateItem(JSON.parse(line))) {
-        console.log(`Line ${i} is valid.`);
-    } else {
-        console.log(`Line ${i} is invalid.`);
-        console.log(validateItem.errors);
+(() => {
+    if (!file) {
+        console.error(`Please inform a file to validate.`);
+        return;
     }
-});
+
+    if (!fs.existsSync(file)) {
+        console.error(`${file} does not exist.`);
+        return;
+    }
+
+    console.log(`Validating file ${file}`);
+
+    const lines = fs.readFileSync(process.argv[2], 'utf8').trim().split("\n");
+
+    if (validateHeader(JSON.parse(lines[0]))) {
+        console.log('Header is valid.');
+    } else {
+        console.log('Header is invalid.');
+        console.log(validateHeader.errors);
+    }
+
+    lines.slice(1).forEach((line, i) => {
+        if (validateItem(JSON.parse(line))) {
+            console.log(`Line ${i+1} is valid.`);
+        } else {
+            console.log(`Line ${i+1} is invalid.`);
+            console.log(validateItem.errors);
+        }
+    });
+})();
