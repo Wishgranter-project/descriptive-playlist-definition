@@ -66,7 +66,10 @@ An object that describes a specific music or album may contain the following pro
 | genre           | string\|array                  | Musical genre(s) that could be used to categorize the music.                                                                                                                                                                                                              |
 | ^xxx[A-Za-z0-9]{1,100}$ | string \| num \| null \| array | Custom properties, defined by the user or by the software managing the playlist.<br/>It must be prefixed by `xxx`, contain only letters and numbers and be no more than 100 characters long ( not counting the `xxx` prefix ). |
 
-**Note**: Title or album ( or both ) must be informed for the item to be considered valid.
+**Notes**:
+
+- Use UUID v4.
+- Title or album ( or both ) must be informed for the item to be considered valid.
 
 See the examples below, all are valid playlist items:
 
