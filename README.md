@@ -61,4 +61,4 @@ seamlessly providing a unified experience.
 
 So even if Mike deletes his .mp3 files from his computer or the streaming 
 service stop providing the music, Mike's music collection will remain intact, 
-as long Mike as secures his descriptive playlist files.
+as long as Mike secures his descriptive playlist files.
