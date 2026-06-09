@@ -167,6 +167,6 @@ You can find schema definitions in the `schemas` directory.
 
 ### Script
 
-This repository includes a script to help with validating.
+This repository includes a script to help with validation.
 
 Install the dependencies and run `npm run validate your-playlist-goes-here.dpls`
